@@ -1,8 +1,15 @@
 {% extends 'layout.html' %}
 {% block body %}
 	<h1>Customer Support</h1>
-	
-	
+	r = requests.post("https://"+ domain +".freshdesk.com/api/v2/tickets", auth = (api_key, password), headers = headers, data = json.dumps(ticket))
+	<script src="https://wchat.freshchat.com/js/widget.js"></script>
+	<script>
+  window.fcWidget.init({
+    token: "11b99367-96a7-4261-a8c8-bd9bc4c0944e",
+    host: "https://wchat.freshchat.com"
+  });
+</script>
+
 {% endblock %}
 
 
