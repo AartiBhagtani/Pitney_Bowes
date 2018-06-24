@@ -1,0 +1,30 @@
+Ulhasnagar
+Bandra
+Raipur 
+Jaipur 
+Agra
+Bhopal
+
+@app.route('/HDM')
+def HDM():
+	res = tsp()
+	return render_template('HDM.html', res = res )	
+from tsp import tsp
+{% extends 'layout.html' %}
+{% block body %}
+	<h1>HDM</h1>
+	<h3>
+		Entering different addresses in csv file
+	</h3>
+	<p>
+
+	</p>
+	<p>
+		Best route to reach all palces at earliest
+	</p>
+	{{res}}
+
+	 	 
+{% endblock %}
+
+
