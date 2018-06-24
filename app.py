@@ -9,6 +9,7 @@ from freshdesk.api import API
 from wtforms import Form, StringField, TextAreaField, PasswordField, validators
 from passlib.hash import sha256_crypt
 from functools import wraps
+from tsp import tsp
 
 # multiple linear reg
 api_key = "1ocb2Ebhrq5CAQVMKGBp"
@@ -79,9 +80,9 @@ def Marketing():
 
 @app.route('/HDM')
 def HDM():
-	return render_template('HDM.html')	
+	res = tsp()
+	return render_template('HDM.html', res = res)	
 
 if __name__ == '__main__':
 	app.secret_key='secret123'
 	app.run(debug=True)
-	
