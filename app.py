@@ -75,7 +75,17 @@ def Order_Management():
 
 @app.route('/Marketing')
 def Marketing():
-	return render_template('Marketing.html')	
+    return render_template('Marketing.html')
+
+@app.route('/Marketing', methods=['POST'])
+def Market():
+   resp = requests.post('https://Deepa:562dfc7c5815051c9f150f305d40407e-us18@us18.api.mailchimp.com/3.0/campaigns/9d3f53355e/actions/replicate')
+   data = resp.json()
+   #values = json.loads(data)
+   code = data['id']
+   print(code)
+   r = requests.post('https://Deepa:562dfc7c5815051c9f150f305d40407e-us18@us18.api.mailchimp.com/3.0/campaigns/' +code+'/actions/send')
+   return render_template('Marketing.html')    	
 
 @app.route('/HDM')
 def HDM():

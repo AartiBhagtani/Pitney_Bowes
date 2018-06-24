@@ -2,7 +2,12 @@
 {% block body %}
 	<h1>Marketing</h1>
 	
-	
+	<form action="/Marketing" method="POST">
+	  <input type="hidden" id="type" value="sales">
+	  <label>
+	  	Send mails
+	  <input type="submit" name="Sale" class="btn btn-primary">
+      </label>
+    </form>
+
 {% endblock %}
-
-
